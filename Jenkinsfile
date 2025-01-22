@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Clone the repository
-                    git branch: 'main', url: 'https://github.com/ysc101/sample-node-project-circleci.git'
+                    git branch: 'master', url: 'https://github.com/ysc101/sample-node-project-circleci.git'
                 }
             }
         }
