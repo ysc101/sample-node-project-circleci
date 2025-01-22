@@ -15,26 +15,20 @@ pipeline {
             }
         }
 
+        stages {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Navigate to the project directory and install dependencies
-                    sh '''
-                    cd sample-node-project
-                    npm install
-                    '''
+                    echo 'Installing dependencies...'
+                    bat 'npm install'  // Use bat for Windows shell commands
                 }
             }
         }
-
         stage('Start Application') {
             steps {
                 script {
-                    // Start the Node.js application
-                    sh '''
-                    cd sample-node-project
-                    npm start
-                    '''
+                    echo 'Starting application...'
+                    bat 'start /B npm start'  // Start in background for Windows
                 }
             }
         }
